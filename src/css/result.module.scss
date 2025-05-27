@@ -11,7 +11,7 @@
   max-width: 1440px;
   width: 100%;
   margin: 130px auto;
-  padding: 0 20px;
+  padding: 0 3rem;
 
   font-family: $font-all;
   color: #333;
@@ -39,16 +39,20 @@
 
   .header {
     text-align: left;
-    padding-left: 130px;
+    padding-left: 5rem;
 
   }
 
   .radarSection {
 
-    padding: 5rem;
+   margin: 4rem 8rem;
     display: flex;
-    justify-content: space-between; // ← 讓左右分離
-    align-items: center;
+    justify-content: space-between; // 讓左右分離
+    gap: 15rem;
+    align-items: flex-start;
+    .chartText {
+      padding-left: 5rem;
+    }
 
     .radarChart {
       flex: 1;
@@ -77,6 +81,8 @@
         margin-top: 0.5rem;
         font-size: 10px;
         text-align: left;
+        flex-wrap: wrap;
+width: 20rem;
 
       }
 
@@ -91,10 +97,11 @@
       justify-items: center;
       align-items: start;
 
+
       .characterBox {
 
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
         align-items: center;
         column-gap: 8px;
 
@@ -140,22 +147,45 @@
           }
         }
 
-        .bubbleText span {
-          display: inline-block;
-          font-size: 10px;
-          color: white;
-          text-align: center;
-          max-width: 2em;
-          word-break: break-word;
-          line-height: 1.2;
-        }
+      div {
+        display: flex;
+        justify-content: center;
+      }
+      }
+    }
+    .radarLeft {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3rem;
+      p{
+        color: #000;
+
+/* 內文1-14px */
+font-family: "Noto Sans TC";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 177%; /* 24.78px */
+letter-spacing: 1.96px;
       }
     }
   }
 
   .summary {
-    padding: 5rem;
-
+    padding: 2rem 8rem;
+    h4 {
+      color: #14A168;
+font-family: "Noto Sans TC";
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 120.288%; /* 28.869px */
+letter-spacing: 6.24px;
+flex-wrap: wrap;
+width: 46rem;
+padding-bottom: 3rem;
+    }
     h3 {
       color: $color-black;
       font-family: $font-all;
@@ -164,17 +194,22 @@
       line-height: 100%;
       /* 36px */
       letter-spacing: 3.24px;
-      padding-bottom: 26px;
+      padding-bottom: 2rem;
     }
 
     .barGroup {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 1rem;
       width: 830px;
       margin-bottom: 1rem;
 
       label {
         display: block;
+        text-align: left;
+        padding-left: 1.5rem;
         font-weight: bold;
-        margin-bottom: 0.25rem;
         color: var(--Neutrue-White, #FFF);
 font-family: "Noto Sans TC";
 font-size: 18px;
@@ -183,13 +218,17 @@ letter-spacing: 1.62px;
       }
 
       .bar {
-
+        padding-right: 0.5rem;
+        color: #7e7e7e;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
         height: 30px;
         background: #F4EFEF;
         border-radius: 20px;
-        margin-bottom: 12px;
         position: relative;
         overflow: hidden;
+
       }
 
       .fill {
@@ -204,57 +243,145 @@ letter-spacing: 1.62px;
     }
 
     .protein {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: 1rem;
-      color: #3cb371;
-    }
-  }
+      display: flex;
+      padding-top: 1rem;
 
-  .nutritionSplit {
-    margin: 2rem 0;
-
-    h3 {
-      font-size: 1.25rem;
-      color: #2c8f5b;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 1rem;
+      color: #000;
+font-family: "Noto Sans TC";
+font-size: 36px;
+font-style: normal;
+font-weight: 500;
+line-height: 100%; /* 36px */
+letter-spacing: 3.24px;
+p{
+  color: var(--main-deep, #3DCE94);
+  font-family: "Noto Sans TC";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 5.28px;
+}
     }
   }
 
   .productList {
-    h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    // padding: 1rem;
+    // margin: auto 1rem;
+  
+    .card {
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.80);
+      box-shadow: 0px 4px 19.4px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      padding: 1.5rem;
+      width: 425px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+  
+      img {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 30px;
+      }
+      .needWhat {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: flex-end;
+      }
+  .needLeft{
+    h4 {
+      color: #3DCE94;
+      font-family: "Noto Sans TC";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 120%; /* 80.16px */
+    }
+    span {
+      color: #3DCE94;
+font-family: "Noto Sans TC";
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 132%; /* 31.68px */
+letter-spacing: 2.16px;
     }
 
-    .card {
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+.needRight {
+  text-align: left;
+  span {
+    color: #252527;
+font-family: "Noto Sans TC";
+font-size: 13px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 2.86px;
+  }
+  p {
+    color: #252527;
+font-family: "Noto Sans TC";
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 4.4px;
+  }
 
-      img {
-        width: 100px;
-        margin-bottom: 1rem;
-      }
+}
 
-      h4 {
-        color: #2c8f5b;
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-      }
-
-      p {
+  
+      .subtitle {
         font-size: 0.95rem;
+        font-weight: 600;
+        color: #000;
+      }
+  
+      .detail {
+        font-size: 0.9rem;
+        color: #333;
       }
     }
   }
+  
+//   .productList {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr); // 每欄等寬
+//     gap: 1rem; // 欄與欄之間的間距
+
+
+
+//     .card {
+
+//       border-radius: 30px;
+// background: rgba(255, 255, 255, 0.80);
+// box-shadow: 0px 4px 19.4px 0px rgba(0, 0, 0, 0.25);
+
+
+//       img {
+//         width: 100px;
+//         margin-bottom: 1rem;
+//       }
+
+//       h4 {
+//         color: #2c8f5b;
+//         font-size: 1rem;
+//         margin-bottom: 0.5rem;
+//       }
+
+//       p {
+//         font-size: 0.95rem;
+//       }
+//     }
+//   }
 
   .actions {
 
@@ -276,25 +403,37 @@ letter-spacing: 1.62px;
       padding: 0.5rem 1.5rem;
       cursor: pointer;
       transition: background-color 0.3s;
+      letter-spacing: 1.62px;
+line-height: 150%;
 
       border-radius: 25px;
-      background-color: #3DCE94;
+      background-color: $color-primary;
+
       box-shadow: 0px 2px 3.5px 0px rgba(0, 0, 0, 0.25);
 
       &:hover {
-        background-color: $color-primary;
+      background-color: #3dce94f5;
+
         color: $color-white;
+        border-bottom: #333;
+
+        border-radius: 25px;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
       }
     }
 
     .retry {
-      background-color: $color-gray;
+      background-color: #AAA6A8;
       color: $color-white;
 
 
       &:hover {
         background-color: $color-level2;
+        border-bottom: #333;
         color: $color-white;
+
+        border-radius: 25px;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 
 
       }
@@ -302,26 +441,3 @@ letter-spacing: 1.62px;
   }
 }
 
-
-// .product-list {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   gap: 60px;
-//   padding: 80px 40px;
-//   font-family: "Noto Sans TC", sans-serif;
-// }
-
-// .product-card {
-//   width: 300px;
-//   text-align: left;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .product-card .product-image-wrapper {
-//   position: relative;
-//   width: 100%;
-//   border-radius: 20px;
-//   overflow: hidden;
-// }

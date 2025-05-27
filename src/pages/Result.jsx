@@ -23,11 +23,6 @@ const Result = () => {
     conditions
   } = resultData;
   // 六大營養素的紅配綠
-  const getLevelClass = (score) => {
-    if (score >= 8) return styles.high;
-    if (score >= 5) return styles.medium;
-    return styles.low;
-  };
   const getBubble = (score) => {
     let levelClass = "";
     let text = "";
@@ -49,16 +44,25 @@ const Result = () => {
       </div>
     );
   };
+  const suggestions = {
+    protein: "．建議多攝取豆製品、堅果等植物性蛋白，補足蛋白質需求。",
+    b12: "．純素飲食容易缺乏B12，建議選擇B12補充品。",
+    ca: "．建議多吃深綠色蔬菜、黑芝麻等含鈣食物，提升鈣質攝取。",
+    iron: "．建議搭配維生素C攝取鐵質，搭配適量C補充品。",
+    d: "．建議多曬太陽，搭配適量維生素D補充品。",
+    omg: "．建議攝取亞麻仁籽、奇亞籽等富含Omega-3的植物性食材。"
+  };
 
-const nutrientKeys = ["protein", "b12", "iron", "omega3", "ca", "d"];
-const nutrientLabels = {
-  protein: "蛋白質",
-  b12: "B12",
-  iron: "鐵",
-  omega3: "Omega-3",
-  ca: "鈣",
-  d: "維生素D"
-};
+
+  const nutrientKeys = ["protein", "b12", "iron", "omega3", "ca", "d"];
+  const nutrientLabels = {
+    protein: "蛋白質",
+    b12: "B12",
+    iron: "鐵",
+    omega3: "Omega-3",
+    ca: "鈣",
+    d: "維生素D"
+  };
 
   const radarLabels = {
     protein: "蛋白質",
@@ -89,36 +93,47 @@ const nutrientLabels = {
     fat: Math.round(tdee * 0.35 / 9),
   };
 
-  // 假設推薦品依症狀挑選
-  const recommendedProducts = [];
-  if (conditions.fatigue) {
-    recommendedProducts.push({
-      name: "鐵 + 維生素 B12",
-      desc: "幫助你改善疲勞與精神不濟，恢復活力。",
-      image: "/images/iron-b12.png",
-    });
-  }
-  if (conditions.headache) {
-    recommendedProducts.push({
-      name: "鎂 + Omega-3",
-      desc: "有助緩解頭痛與情緒不穩。",
-      image: "/images/mag-omega3.png",
-    });
-  }
-  if (conditions.constipation) {
-    recommendedProducts.push({
-      name: "膳食纖維 + 維生素C",
-      desc: "幫助排便順暢，促進腸道健康。",
-      image: "/images/fiber-c.png",
-    });
-  }
-  if (conditions.cramp) {
-    recommendedProducts.push({
-      name: "鈣 + 維生素D",
-      desc: "強健骨骼與肌肉，減少抽筋發生。",
-      image: "/images/calcium-d.png",
-    });
-  }
+  const recommendedProducts = {
+    fatigue: [
+      {
+        name: "鐵了心膠囊",
+        desc: "植萃鐵＋B群補給",
+        image: "/assets/shop_iron.png",
+      },
+      {
+        name: "維生素 B12",
+        desc: "補B不累口含錠",
+        image: "/assets/shop_B12.png",
+      }
+    ],
+    headache: [
+      {
+        name: "OMEG3",
+        desc: "油你真好植物膠囊",
+        image: "/assets/shop_omg.png",
+      }
+    ],
+    constipation: [
+      {
+        name: "維生素超群膠囊",
+        desc: "植萃綜合維他命配方",
+        image: "/assets/shop_protein.png",
+      }
+    ],
+    cramp: [
+      {
+        name: "鈣心定植物鈣",
+        desc: "藻鈣＋D3雙效配方",
+        image: "/assets/shop_Ca.png",
+      },
+      {
+        name: "素D速補D",
+        desc: "植萃維生素D膠囊",
+        image: "/assets/shop_D.png",
+      }
+    ]
+  };
+
 
   const handleRetry = () => {
     navigate("/quiz"); // 返回測驗頁面
@@ -151,48 +166,40 @@ const nutrientLabels = {
       <section className={styles.radarSection}>
         {/* 左：六大營養素 */}
 
-        <div className={styles.radarCharacter}>
-  {nutrientKeys.map((key) => (
-    <div key={key} className={styles.characterBox}>
-      <div className={styles.characterImgWrapper}>
-        {getBubble(radarScores[key])}
-        <img src={`/assets/${key}.svg`} alt={nutrientLabels[key]} />
-      </div>
-      <div className={styles.bubbleText}>
-      <span>{nutrientLabels[key]}</span></div>
-    </div>
-  ))}
-</div>
-{/* 
-        <div className={styles.radarCharacter}>
-          <div className={`${styles.characterBox} ${getLevelClass(radarScores.protein)}`}>
-            <div className={styles.characterImg}>
-              {getBubble(radarScores.protein)}
-              <img src="./assets/protein.svg" alt="蛋白質" />
-            </div>
-            <span>蛋白質</span>
+        <div className={styles.radarLeft}>
+
+          <div className={styles.radarCharacter}>
+            {nutrientKeys.map((key) => (
+              <div key={key} className={styles.characterBox}>
+                <div className={styles.characterImgWrapper}>
+                  {getBubble(radarScores[key])}
+                  {/* <img src={`/assets/${key}.svg`} alt={nutrientLabels[key]} /> */}
+                  <img
+                    src={`${import.meta.env.BASE_URL}assets/${key}.svg`}
+                    alt={nutrientLabels[key]}
+                  />
+
+                </div>
+
+                <div className={styles.bubbleText}>
+                  <span>{nutrientLabels[key]}</span></div>
+              </div>
+
+            ))}
           </div>
-          <div className={`${styles.characterBox} ${getLevelClass(radarScores.b12)}`}>
-            <img src="./assets/B12.svg" alt="" />
-            <span>B12</span>
+
+          <div className={styles.suggestionBox}>
+            {nutrientKeys
+              .filter((key) => radarScores[key] < 6)
+              .map((key) => (
+                <p key={key} className={styles.suggestion}>
+                  {suggestions[key]}
+                </p>
+              ))}
           </div>
-          <div className={`${styles.characterBox} ${getLevelClass(radarScores.ca)}`}>
-            <img src="./assets/ca.svg" alt="" />
-            <span>鈣</span>
-          </div>
-          <div className={`${styles.characterBox} ${getLevelClass(radarScores.iron)}`}>
-            <img src="./assets/iron.svg" alt="" />
-            <span>鐵</span>
-          </div>
-          <div className={`${styles.characterBox} ${getLevelClass(radarScores.d)}`}>
-            <img src="./assets/D.svg" alt="" />
-            <span>維生素D</span>
-          </div>
-          <div className={`${styles.characterBox} ${getLevelClass(radarScores.omega3)}`}>
-            <img src="./assets/omega-3.svg" alt="" />
-            <span>Omega-3</span>
-          </div>
-        </div> */}
+        </div>
+
+
 
         {/* 右：雷達圖 */}
 
@@ -219,177 +226,65 @@ const nutrientLabels = {
             </RadarChart>
           </ResponsiveContainer>
           {/* 右下：雷達小語 */}
+          <div className={styles.chartText}>
 
-          <h4 className={styles.chartTitle}><div className={styles.circle}></div>實際攝取量</h4>
-          <p className={styles.chartNote}>本圖為六大營養素攝取平衡圖，角落越接近圓心表示該營養素攝取不足。
-            建議每日攝取針對性保健食品不足該營養素。</p>
+            <h4 className={styles.chartTitle}><div className={styles.circle}></div>實際攝取量</h4>
+            <p className={styles.chartNote}>本圖為六大營養素攝取平衡圖，角落越接近圓心表示該營養素攝取不足。
+              建議每日攝取針對性保健食品不足該營養素。</p>
+          </div>
+
+
         </div>
       </section>
 
       {/* 攝取計算 */}
       <section className={styles.summary}>
+        <h4>根據你的飲食填答，我們整理了以下營養狀況與建議，
+          協助你掌握當前狀況並找到適合的改善方式。</h4>
         <h3>營養攝取建議</h3>
         <div className={styles.barGroup}>
-          
-          <div className={styles.bar}><div className={styles.fill} style={{ width: `${(tdee / 3000) * 100}%` }}><label>TDEE（每日總熱量消耗）</label>{tdee}</div></div>
 
-          <label>BMR（基礎代謝率）</label>
-          <div className={styles.bar}><div className={styles.fill} style={{ width: `${(bmr / 2000) * 100}%` }}>{bmr}</div></div>
+          <div className={styles.bar}><div className={styles.fill} style={{ width: `${(tdee / 3000) * 100}%` }}><label>TDEE每日總熱量消耗（千卡）</label></div>{tdee}</div>
 
-          <label>BMI（身體質量指數）</label>
-          <div className={styles.bar}><div className={styles.fill} style={{ width: `${(bmi / 30) * 100}%` }}>{bmi}</div></div>
+          <div className={styles.bar}><div className={styles.fill} style={{ width: `${(bmr / 2000) * 100}%` }}><label>BMR基礎代謝率</label></div>{bmr}</div>
+
+          <div className={styles.bar}><div className={styles.fill} style={{ width: `${(bmi / 30) * 100}%` }}><label>BMI身體質量指數</label></div>{bmi}</div>
         </div>
 
-        <div className={styles.protein}>每日蛋白質需求：<strong>{proteinNeed}g</strong></div>
+        <div className={styles.protein}>每日蛋白質需求＝<p><strong>{proteinNeed}g</strong></p></div>
       </section>
 
-      {/* 營養分配 */}
-      <section className={styles.nutritionSplit}>
-        <h3>建議營養分配為：</h3>
-        <p>碳水 <strong>{nutritionSplit.carb}g</strong>、蛋白質 <strong>{nutritionSplit.protein}g</strong>、脂肪 <strong>{nutritionSplit.fat}g</strong></p>
-      </section>
 
       {/* 推薦產品 */}
       <section className={styles.productList}>
-        <h3>推薦補給品</h3>
-        {recommendedProducts.map((p, idx) => (
-          <div className={styles.card} key={idx}>
-            <img src={p.image} alt={p.name} />
-            <h4>Need 補營養！</h4>
-            <p>{p.name}</p>
-            <p>{p.desc}</p>
-          </div>
-        ))}
+        {Object.keys(recommendedProducts).map((symptomKey) => {
+          if (!conditions[symptomKey]) return null;
+
+          return recommendedProducts[symptomKey].map((product, idx) => (
+            <div className={styles.card} key={`${symptomKey}-${idx}`}>
+              <img src={`${import.meta.env.BASE_URL}${product.image.replace(/^\//, '')}`} alt={product.name} />
+              <div className={styles.needWhat}>
+
+                <div className={styles.needLeft}>
+
+                  <h4>Need </h4>
+                  <span>補營養！</span>
+                </div>
+                <div className={styles.needRight}>
+
+                  <span>{product.name}</span>
+                  <p>{product.desc}</p>
+                </div>
+              </div>
+
+            </div>
+          ));
+        })}
       </section>
-
-      {/* <!-- 素清單區塊 -->
-    <div class="tab-content active" id="favorites">
-      <div class="product-list">
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img src="./shop/img/jaso-medicine_Ca.png" alt="產品1" class="product-image" />
-          </div>
-
-          <div class="product-meta">
-            <div class="product-tags">
-              <span class="tag">手腳冰冷</span>
-              <span class="tag">手腳冰冷</span>
-            </div>
-            <div class="product-icon">
-              <button class="cart-btn" aria-label="加入購物車"></button>
-              <button class="like-btn" aria-label="加入收藏"></button>
-            </div>
-          </div>
-
-          <div class="product-title">鈣心定植物鈣 <span class="product-subtitle">藻鈣+D3雙效配方</span></div>
-          <div class="product-desc">骨質疏鬆症找上門？補鈣不能只靠牛奶？同時也要補維生素D！幫助吸收鈣質也幫助骨骼更...</div>
-          <a href="#" class="product-link">
-            <span class="arrow">&gt;</span>
-            <span class="text">看完整產品內容</span></a>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img src="./shop/img/jaso-medicine_Ca.png" alt="產品1" class="product-image" />
-          </div>
-
-          <div class="product-meta">
-            <div class="product-tags">
-              <span class="tag">手腳冰冷</span>
-              <span class="tag">手腳冰冷</span>
-            </div>
-            <div class="product-icon">
-              <button class="cart-btn" aria-label="加入購物車"></button>
-              <button class="like-btn" aria-label="加入收藏"></button>
-            </div>
-          </div>
-
-          <div class="product-title">鈣心定植物鈣 <span class="product-subtitle">藻鈣+D3雙效配方</span></div>
-          <div class="product-desc">骨質疏鬆症找上門？補鈣不能只靠牛奶？同時也要補維生素D！幫助吸收鈣質也幫助骨骼更...</div>
-          <a href="#" class="product-link">
-            <span class="arrow">&gt;</span>
-            <span class="text">看完整產品內容</span></a>
-        </div>
-
-<div class="product-card">
-          <div class="product-image-wrapper">
-            <img src="./shop/img/jaso-medicine_Ca.png" alt="產品1" class="product-image" />
-          </div>
-
-          <div class="product-meta">
-            <div class="product-tags">
-              <span class="tag">手腳冰冷</span>
-              <span class="tag">手腳冰冷</span>
-            </div>
-            <div class="product-icon">
-              <button class="cart-btn" aria-label="加入購物車"></button>
-              <button class="like-btn" aria-label="加入收藏"></button>
-            </div>
-          </div>
-
-          <div class="product-title">鈣心定植物鈣 <span class="product-subtitle">藻鈣+D3雙效配方</span></div>
-          <div class="product-desc">骨質疏鬆症找上門？補鈣不能只靠牛奶？同時也要補維生素D！幫助吸收鈣質也幫助骨骼更...</div>
-          <a href="#" class="product-link">
-            <span class="arrow">&gt;</span>
-            <span class="text">看完整產品內容</span></a>
-        </div>
-
-<div class="product-card">
-          <div class="product-image-wrapper">
-            <img src="./shop/img/jaso-medicine_Ca.png" alt="產品1" class="product-image" />
-          </div>
-
-          <div class="product-meta">
-            <div class="product-tags">
-              <span class="tag">手腳冰冷</span>
-              <span class="tag">手腳冰冷</span>
-            </div>
-            <div class="product-icon">
-              <button class="cart-btn" aria-label="加入購物車"></button>
-              <button class="like-btn" aria-label="加入收藏"></button>
-            </div>
-          </div>
-
-          <div class="product-title">鈣心定植物鈣 <span class="product-subtitle">藻鈣+D3雙效配方</span></div>
-          <div class="product-desc">骨質疏鬆症找上門？補鈣不能只靠牛奶？同時也要補維生素D！幫助吸收鈣質也幫助骨骼更...</div>
-          <a href="#" class="product-link">
-            <span class="arrow">&gt;</span>
-            <span class="text">看完整產品內容</span></a>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img src="./shop/img/jaso-medicine_Ca.png" alt="產品1" class="product-image" />
-          </div>
-
-          <div class="product-meta">
-            <div class="product-tags">
-              <span class="tag">手腳冰冷</span>
-              <span class="tag">手腳冰冷</span>
-            </div>
-            <div class="product-icon">
-              <button class="cart-btn" aria-label="加入購物車"></button>
-              <button class="like-btn" aria-label="加入收藏"></button>
-            </div>
-          </div>
-
-          <div class="product-title">鈣心定植物鈣 <span class="product-subtitle">藻鈣+D3雙效配方</span></div>
-          <div class="product-desc">骨質疏鬆症找上門？補鈣不能只靠牛奶？同時也要補維生素D！幫助吸收鈣質也幫助骨骼更...</div>
-          <a href="#" class="product-link">
-            <span class="arrow">&gt;</span>
-            <span class="text">看完整產品內容</span></a>
-        </div>
-
-        
-      </div>
-    </div> */}
-
-
       {/* 行動按鈕 */}
       <section className={styles.actions}>
         <button className={styles.share} onClick={handleShare}>分享結果</button>
-        <button className={styles.retry} onClick={handleRetry}>再次測驗</button>
+        <button className={styles.retry} onClick={handleRetry}>再測一次</button>
 
       </section>
     </div>

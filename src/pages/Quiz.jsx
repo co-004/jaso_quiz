@@ -139,12 +139,12 @@ const Quiz = () => {
         setTimeout(() => {
           setCurrentQuestion(qIdx + 1);
         }, 200);
-        
+
       }
     }
   };
 
-  
+
 
   const [dropdownOpen, setDropdownOpen] = useState({});
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -157,13 +157,13 @@ const Quiz = () => {
     if (questions[currentQuestion].type === "form") {
       const requiredFields = questions[currentQuestion].fields.map(f => f.name);
       const isAllFilled = requiredFields.every(field => answers[field] !== undefined && answers[field] !== "");
-  
+
       if (!isAllFilled) {
         alert("請填入全部欄位");
         return;
       }
     }
-  
+
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
@@ -171,7 +171,7 @@ const Quiz = () => {
       navigate("/result", { state: { answers } }); // 假設你用的是 React Router 的 navigate
     }
   };
-  
+
   const handleSubmit = () => {
     setIsSubmitting(true); // 顯示 Loading 畫面
 
@@ -198,7 +198,7 @@ const Quiz = () => {
 
     // 六題 radar chart 分數（第 2~7 題）
     const radarKeys = ["protein", "b12", "iron", "omega3", "ca", "d"];
-   
+
     const radarScores = {};
     radarKeys.forEach((key, i) => {
       const value = answers[i + 2];
@@ -257,10 +257,19 @@ const Quiz = () => {
     return (
       <div className={styles.loadingContainer}>
         <img
-          src={isLeft ? "/assets/loading-face-2.svg" : "/assets/loading-face.svg"}
+          src={
+            isLeft
+              ? `${import.meta.env.BASE_URL}assets/loading-face-2.svg`
+              : `${import.meta.env.BASE_URL}assets/loading-face.svg`
+          }
           alt="loading face"
           className={styles.faceImage}
         />
+        {/* <img
+          src={isLeft ? "/assets/loading-face-2.svg" : "/assets/loading-face.svg"}
+          alt="loading face"
+          className={styles.faceImage}
+        /> */}
         <p className={styles.text}>測驗結果生成中{'.'.repeat(dotCount)}</p>
         <p className={styles.subtext}>請稍等一下哦</p>
       </div>
@@ -268,18 +277,18 @@ const Quiz = () => {
   };
 
   const renderQuestion = () => {
-    
+
     const q = questions[currentQuestion];
-//     if (playAnimation) {
-//   return (
-//     <div className={styles.animationWrapper}>
-//       <img src={questions[currentQuestion].image}
-//         alt="animation"
-//         className={styles.animationImage}
-//       />
-//     </div>
-//   );
-// }
+    //     if (playAnimation) {
+    //   return (
+    //     <div className={styles.animationWrapper}>
+    //       <img src={questions[currentQuestion].image}
+    //         alt="animation"
+    //         className={styles.animationImage}
+    //       />
+    //     </div>
+    //   );
+    // }
 
     if (q.type === "intro") {
       return (
@@ -345,7 +354,7 @@ const Quiz = () => {
                       <label className={styles["field-label"]}>{field.label}</label>
                       <div className={styles["option-group"]}>
                         {field.options.map((opt) => (
-                              <label key={opt} className={`${styles["option-1"]} 
+                          <label key={opt} className={`${styles["option-1"]} 
                               ${answers[field.name] === opt ? styles.selected : ''}`}>
                             <input
                               type="radio"
@@ -466,9 +475,9 @@ const Quiz = () => {
             {q.options.map((opt, i) => (
 
               <label key={i}
-              className={`${styles.option} 
+                className={`${styles.option} 
               ${answers[currentQuestion] === opt ? styles.selected : ''}`}>
-                
+
 
                 <input
                   type="radio"
@@ -485,7 +494,7 @@ const Quiz = () => {
           </div>
         </div>
         <div className={styles.questionRight}>
-        <QuizAni questionKey={questions[currentQuestion].animationKey} />
+          <QuizAni questionKey={questions[currentQuestion].animationKey} />
         </div>
       </div>
     );

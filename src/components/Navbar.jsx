@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from "../css/navbar.module.scss";
+// import navLogo from '../../public/assets/nav-logo.svg'
 
 const Navbar = () => {
   return (
     <header>
       <div className={styles.navHidden}>
         <a className={styles.logo} href="/article-main.html">
-          <img src="/assets/nav-logo.svg" alt="logo" />
+        <img src={`${import.meta.env.BASE_URL}assets/nav-logo.svg`} alt="logo"/>
+          {/* <img src={navLogo} alt="logo" /> */}
         </a>
         <div className={styles.navbar}>
           <div className={styles.navCenter}>

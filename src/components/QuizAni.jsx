@@ -34,10 +34,11 @@ const QuizAni = ({ questionKey = 'q1', interval = 200 }) => {
     <div className={styles.imageContainer}>
 
       <img
-  src={`/assets/${images[currentIndex]}`}
+  src={`${import.meta.env.BASE_URL}assets/${images[currentIndex]}`}
   alt={`${questionKey} animation step ${currentIndex + 1}`}
   className={`${styles.animatedImage} ${styles[`scale_${questionKey}`]}`}
 />
+
     </div>
   );
 };

@@ -94,12 +94,12 @@
   align-items: center;
   justify-content: center;
 
-  -webkit-mask-image: url('../../public/assets/0.svg');
+  -webkit-mask-image: url('/assets/0.svg');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
 
-  mask-image: url('../../public/assets/0.svg');
+  mask-image: url('/assets/0.svg');
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;

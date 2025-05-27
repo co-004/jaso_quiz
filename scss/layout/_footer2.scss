@@ -1,0 +1,168 @@
+@use "../variable/var-color" as *;
+@use "../variable/var-font" as *;
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-bg {
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: $color-white !important;
+    text-decoration: none;
+  }
+
+  margin: auto;
+  overflow: hidden;
+  color: $color-white;
+  font-family: $font-all;
+  background-size: cover;
+  background-color: $color-dark; // 原本是 #252527，可用 color-dark 或 color-dark-gray
+  position: relative;
+  width: 100%;
+}
+
+.back-to-top {
+  background-color: $alpha;
+  position: fixed;
+  right: 130px;
+  bottom: 50px;
+  z-index: 999;
+
+  img {
+    width: 100px;
+    padding: 0;
+    border: none;
+    height: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.footer-grid {
+  padding: 10rem;
+  width: 10rem;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  width: 480px;
+}
+
+.footer-heading {
+  font-size: map-get($font-size, s); // 約 20px
+  font-weight: 500;
+  font-family: $font-all;
+}
+
+.footer-grid li {
+  color: $color-white;
+  font-size: map-get($font-size, xs); // 約 17.6px
+  font-family: $font-all;
+}
+
+.footer-cta {
+  width: 600px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rem;
+}
+.cta {
+    padding: 5rem;
+    font-family: "Noto Sans TC";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.cta h3 {
+    color: #676767;
+    font-size: 64px;
+    letter-spacing: 14.08px;
+}
+.join-btn {
+    margin: 2rem;
+    width: 520px;
+    height: 66px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: var(--main-deep, #3DCE94);
+}
+
+.join-btn p {
+    color: var(--Neutrue-White, #FFF);
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2.7px;
+}
+
+.join-btn span {
+    color: var(--Neutrue-White, #FFF);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1.8px;
+}
+
+
+
+.footer-slogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: map-get($font-size, 4xl); // 70px ≈ 5rem
+    font-family: $font-all;
+  }
+
+  p {
+    font-size: map-get($font-size, s); // 約 20px
+    font-family: $font-all;
+  }
+
+  .icon {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75px;
+    padding: 1rem;
+  }
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  font-family: $font-all;
+  font-size: map-get($font-size, xs); // 約 17.6px
+}
+
+@media (max-width: 1440px) {
+  main,
+  footer {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

@@ -1,0 +1,183 @@
+.login-section {
+    text-align: center;
+    padding: 60px 20px;
+    font-family: "Noto Sans TC", sans-serif;
+
+    .login-header {
+        margin-bottom: 40px;
+
+        h1 {
+            font-style: normal;
+            font-size: 64px;
+            font-weight: 700;
+            color: #3DCE94;
+            margin-bottom: 16px;
+        }
+
+        .face-wrapper {
+            position: relative;
+            width: 200px;
+            height: 160px;
+            margin: 0 auto;
+
+            .login-icon {
+                width: 100%;
+                height: auto;
+                display: block;
+                // background-size: cover;
+                // background-position: center;
+            }
+
+            .eye-wrapper {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                pointer-events: none;
+            }
+
+            .rotating-eye {
+                width: 100%;
+                height: 100%;
+                transform-origin: center center;
+                transition: transform 0.1s linear;
+            }
+
+            // .eye-wrapper {
+            //     width: 50px;
+            //     height: 50px;
+            //     background-color: #fff;
+            //     border: 2px solid #3DCE94;
+            //     border-radius: 50%;
+            //     position: absolute;
+            //     overflow: hidden;
+            // }
+
+            .eye-left {
+                top: 50px;
+                left: 30px;
+            }
+
+            .eye-right {
+                top: 50px;
+                right: 30px;
+            }
+
+            // .eyeball {
+            //     width: 20px;
+            //     height: 20px;
+            //     background-color: #3DCE94;
+            //     border-radius: 50%;
+            //     position: absolute;
+            //     top: 15px;
+            //     left: 15px;
+            //     transition: transform 0.1s ease;
+            // }
+
+        }
+    }
+
+    .login-form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: left;
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+
+            .input-label {
+                min-width: 100px;
+                font-size: 18px;
+                font-weight: 500;
+                text-align: left;
+            }
+
+            .rounded-input {
+                flex: 1;
+                padding: 12px 20px;
+                border-radius: 999px;
+                background: #F6EFEF;
+                border: none;
+                font-size: 16px;
+                color: #333;
+            }
+        }
+    }
+
+    .login-actions {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin: 40px 0;
+
+        .btn {
+            min-width: 200px; // ✅ 固定寬度
+            padding: 12px 60px;
+            font-size: 16px;
+            border-radius: 999px;
+            border: 2px solid transparent; // ← 預設透明邊框
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease; // 增加滑順動畫
+            margin-top: 50px;
+
+            &.primary {
+                background-color: #3DCE94;
+                color: #fff;
+            }
+
+            &.secondary {
+                background-color: #3DCE94;
+                color: #fff;
+            }
+
+            &:hover {
+                background-color: white;
+                color: #3DCE94;
+                border: 2px solid #3DCE94;
+            }
+        }
+    }
+
+    .signup-tip {
+        text-align: center;
+        font-size: 14px;
+        color: #999;
+
+        .signup-link {
+            color: #3DCE94;
+            margin-left: 4px;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .password-row {
+        position: relative;
+
+        .forgot-password {
+            position: absolute;
+            left: 130px; // 對齊 input 起始位置，可依實際需求微調
+            bottom: -50px; // 貼在輸入框下方
+            font-size: 14px;
+            color: #999;
+            margin: 0;
+
+            a {
+                color: #999;
+                text-decoration: none;
+
+                &:hover {
+                    color: #3DCE94;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

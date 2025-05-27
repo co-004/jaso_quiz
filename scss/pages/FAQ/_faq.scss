@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #fff;
+}
+
+.policy-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 40px 20px;
+  gap: 60px;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.policy-sidebar {
+  position: sticky;
+  top: 120px;
+  width: 160px;
+  height: fit-content;
+  background: #fff;
+  border-radius: 25px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0 8px rgba(0, 0, 0, 0.08);
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center; // 讓整個 li 置中
+    padding: 16px 12px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+
+    a {
+      display: block;
+      width: 100%;
+      text-align: left; // ✅ 讓文字靠左對齊
+      font-size: 18px;
+      font-weight: 700;
+      color: #222;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
+      background-color: #f2fdf9;
+
+      a {
+        color: #3DCE94;
+      }
+    }
+  }
+}
+
+.policy-content {
+  flex: 1;
+  max-width: 800px;
+}
+
+.policy-section {
+  margin-bottom: 60px;
+
+  h2 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #3DCE94;
+  }
+
+  h4 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+    color: #222;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+  }
+}
+
+hr {
+  margin: 40px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}

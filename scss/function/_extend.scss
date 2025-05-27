@@ -1,0 +1,46 @@
+@use"../variable" as*;
+
+//繼承extend%(直接匯入，不需要調用)
+//RWD版本樣式不同，不可使用繼承
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%input-style {
+    border: 1px solid $color-lesser2;
+    border-radius: $radius-s;
+    padding: 4px;
+    font-size: map-get($font-size, s);
+
+    &::placeholder {
+        color: $color-lesser2;
+        font-size: map-get($font-size, xs);
+    }
+}
+
+%btn-form {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 60px;
+    width: 210px;
+    opacity: 1;
+    background-color: #ffffff;
+    border: 1px solid rgba(22, 76, 167, 0.6);
+
+    span {
+        color: #164ca7;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.7px;
+    }
+}

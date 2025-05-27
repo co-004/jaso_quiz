@@ -1,0 +1,266 @@
+@use "../../variable/var-color" as *;
+@use "../../variable/var-font" as *;
+@use "../../function/reset";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  background: $color-white;
+}
+
+.question-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  min-height: 80vh;
+
+  .question-left {
+    flex: 1;
+
+    h4 {
+      color: $color-primary;
+      font-size: map-get($font-size, sm);
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: map-get($font-size, lg);
+      margin-top: 10px;
+      color: $color-dark;
+    }
+
+    .options {
+      margin-top: 30px;
+      justify-content: flex-start;
+
+      .option {
+
+        margin-bottom: 15px;
+        padding: 10px 30px;
+        background-color: $color-lightgray1;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        // width: 40rem;
+
+        &:hover {
+          background-color: $color-primary;
+
+          input {
+            margin-right: 10px;
+          }
+        }
+      }
+
+    }
+
+    .title {
+      display: flex;
+    }
+
+    .intro-title {
+
+      display: flex;
+      font-weight: bold;
+      font-size: map-get($font-size, l1);
+      color: $color-primary;
+
+    }
+
+    .intro-question {
+      font-size: map-get($font-size, s);
+      margin-top: 10px;
+      color: $color-light-black;
+    }
+
+    .form-fields {
+
+      .form-group {
+        margin-bottom: 20px;
+        color: $color-light-black;
+        display: flex;
+        align-items: baseline;
+        padding: 0 2px;
+
+        label {
+          display: flex;
+          margin-bottom: 5px;
+          width: 5rem;
+        }
+
+        .option {
+
+          padding: 10px 15px;
+          background-color: $color-lightgray1;
+          border-radius: 25px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $color-primary;
+
+            input {
+              margin-right: 10px;
+            }
+
+
+          }
+        }
+
+
+        input,
+        select {
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $color-gray;
+        }
+
+      }
+
+      .form-group-1 {
+        margin-bottom: 20px;
+        color: $color-light-black;
+        display: flex;
+        align-items: baseline;
+        padding: 0 2px;
+        
+        label {
+          display: flex;
+          margin-bottom: 5px;
+          width: 5rem;
+        }
+
+        .option-1 {
+
+          padding: 10px 15px;
+          background-color: $color-lightgray1;
+          border-radius: 25px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $color-primary;
+
+            input {
+              margin-right: 10px;
+            }
+
+
+          }
+        }
+
+      }
+    }
+  }
+
+  .options.horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 10px; // 選項間距
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: $color-lightgray1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+
+    input[type="radio"] {
+      display: none; // 隱藏原生 radio
+    }
+
+    &:hover {
+      background-color: $color-primary-light1;
+      color: $color-white;
+    }
+
+    input[type="radio"]:checked+span {
+      font-weight: bold;
+      background-color: $color-primary;
+      color: $color-white;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+  }
+
+  .question-right {
+    flex: 0 0 300px;
+    text-align: center;
+
+    img {
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 30px auto 10px;
+
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-light1;
+    }
+  }
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: $color-lightgray1;
+  margin: 0 auto 40px;
+  width: 80%;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .progress {
+    height: 100%;
+    background-color: $color-primary;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+}
+
+.quiz__step {
+  display: none;
+}
+
+.quiz__step.active {
+  display: block;
+}
+.option input[type="radio"]:checked + span {
+  background-color: $color-primary;
+  color: $color-white;
+}
+.option-1 input[type="radio"]:checked + span {
+  background-color: $color-primary;
+  color: $color-white;
+}

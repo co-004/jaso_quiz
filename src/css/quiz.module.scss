@@ -1,0 +1,410 @@
+@use "sass:map";
+@use "../../scss/variable/var-color" as *;
+@use "../../scss/variable/var-font" as *;
+@use "../../scss/function/reset";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+.questionContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  gap: 3rem;
+  margin: 0 auto;
+  padding: 50px 20px;
+  min-height: 80vh;
+
+  .questionLeft {
+    margin-right: 10rem;
+    display: flex;
+
+  .backButton {
+    border-radius: 99px;
+width: 45px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+
+
+    }
+
+
+
+  }
+
+
+  .questionCenter {
+    flex: 1;
+
+    h4 {
+      color: $color-primary;
+      font-size: map.get($font-size, sm);
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: map.get($font-size, lg);
+      margin-top: 10px;
+      color: $color-dark;
+    }
+
+    h1 {
+      font-size: map.get($font-size, l0);
+      margin-top: 10px;
+      color: $color-primary;
+      font-weight: bold;
+
+    }
+
+    .title,
+    .titleWithImage {
+      display: flex;
+    }
+
+    .titleIcon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      object-fit: contain;
+      background-image: url('/assets/+.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .introTitle {
+      display: flex;
+      font-weight: bold;
+      font-size: map.get($font-size, l1);
+      color: $color-primary;
+    }
+
+    .introQuestion {
+      font-size: map.get($font-size, s);
+      margin-top: 10px;
+      color: $color-light-black;
+    }
+
+    .options {
+      margin-top: 30px;
+      justify-content: flex-start;
+
+      &.horizontal {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .option {
+        margin-bottom: 15px;
+        padding: 10px 30px;
+        background-color: $color-lightgray1;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        &:hover {
+          background-color: $color-primary;
+          color: $color-white;
+        }
+        &.selected {
+          background-color: $color-primary;
+          color: $color-white;
+        }
+
+
+
+      }
+    }
+
+    .form-group-1 {
+      display: flex;
+      align-items: center; // 垂直對齊 label 和選項
+      margin-bottom: 20px;
+      padding: 0 2px;
+      color: $color-light-black;
+
+      .field-label {
+        width: 5rem;
+        margin-right: 1rem;
+      }
+
+      .option-group {
+        display: flex;
+        gap: 10px;
+      }
+
+
+    }
+
+    .field-label {
+      width: 5rem;
+      margin-right: 1rem;
+    }
+
+    .option-1 {
+      padding: 10px 15px;
+      background-color: $color-lightgray1;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      input {
+        display: none;
+      }
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+
+      }
+      &.selected {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center; // 垂直對齊 label 和選項
+      margin-bottom: 20px;
+      padding: 0 2px;
+      color: $color-light-black;
+
+          .container {
+              width: 80%;
+    }
+
+      .drop {
+  position: relative;
+  background-color: $color-lightgray1;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+
+    &:hover .dropdown {
+    display: block;
+    
+  }
+  .dropOption {
+    padding: 7.25px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: map.get($font-size, s);
+    color: $color-light-black;
+    // position: relative;
+
+    &::after {
+      content: "";
+      border: 5px solid transparent;
+      border-top-color: $color-dark-gray;
+      margin-top: 5.5px;
+      overflow: hidden;
+      // position: absolute;
+      // right: 10px;
+      // top: 50%;
+      // transform: translateY(-50%);
+    }
+  }
+  .dropdown {
+    display: none;
+  
+    &.open {
+      display: block;
+    }
+  }
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+      background-color: $color-lightgray2;
+
+
+
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+
+
+    
+
+
+    li {
+      padding: 10px;
+      font-size: map.get($font-size, 3xs);
+      color: $color-dark-gray;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+  }
+}
+.dropOption span {
+  font-size: map.get($font-size, 3xs);
+  color: $color-dark-gray;
+
+}
+
+// 讓所有 input 與 placeholder 統一樣式
+input::placeholder {
+  font-size: map.get($font-size, 3xs);
+  color: $color-dark-gray;
+}
+
+
+      option {
+        padding: 10px 15px;
+        background-color: $color-lightgray1;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border: none;
+      }
+
+    }
+
+
+    .form-input {
+      width: 80%;
+      padding: 10px;
+      background-color: $color-lightgray1;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+      background-color: $color-lightgray2;
+
+
+
+
+      }
+
+
+
+    }
+
+}
+
+.questionRight {
+  flex: 0 0 300px;
+  text-align: center;
+
+  // img {
+  //   width: 200px;
+  //   max-width: 100%;
+  //   height: auto;
+  // }
+}
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 30px auto 10px;
+
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-light1;
+    }
+  }
+}
+
+.progressBar {
+  height: 8px;
+  background-color: $color-lightgray1;
+  margin: 0 auto 40px;
+  width: 57%;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .progress {
+    height: 100%;
+    background-color: $color-primary;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+}
+
+.quizStep {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.loadingContainer {
+  position: fixed; 
+  top: 50%; /* 垂直 */
+  left: 50%; /* 水平 */
+  transform: translate(-50%, -50%); /* 確保中間 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.faceImage {
+  width: 200px;
+  height: auto;
+  animation: bounce 0.8s infinite alternate;
+}
+
+.text {
+  margin: 0.5rem;
+  color: $color-primary;
+  text-align: center;
+  font-size: map.get($font-size, l);
+  line-height: $line-h-l;
+  font-weight: $font-w-7;
+  
+}
+
+.subtext {
+  font-size: map.get($font-size, 3xs);
+  color: $color-gray;
+  margin-top: 0.5rem;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+

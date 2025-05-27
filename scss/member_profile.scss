@@ -1,0 +1,44 @@
+/* 修正 profile 與 footer 之間間距 */
+@use "layout/tab.scss";
+@use "pages/profile/profile.scss";
+@use "layout/footer.scss";
+@use "pages/profile/base.scss";
+@use "pages/profile/signup.scss";
+@use "pages/profile/login.scss";
+@use "pages/profile/point.scss";
+@use "pages/profile/order.scss";
+@use "pages/profile/product.scss";
+@use "layout/header.scss";
+@use "pages/profile/ordermore.scss";
+@use "pages/profile/articlefav.scss";
+@use "pages/FAQ/faq.scss";
+@use "pages/about/about.scss";
+
+
+
+@media (max-width: 768px) {
+  .rank-rule-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rank-link {
+    margin-top: 8px;
+  }
+
+  .tab-btn {
+    font-size: 16px;
+    padding: 14px 0;
+  }
+
+  .tab-bar {
+    font-size: 14px;
+  }
+
+  
+}
+
+body {
+  margin-bottom: 0px;
+  margin-left: 0px;
+}

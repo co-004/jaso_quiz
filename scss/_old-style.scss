@@ -1,0 +1,173 @@
+@use "variable" as *;
+@use "function" as *;
+@use "reset";
+@use "icon";
+@use "pages/quiz/quiz";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*google fonts長在第二行，只允許編碼在上面*/
+
+/* 導覽列 */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: $space-m;
+
+    /*內鉅*/
+    .logo {
+        width: 65px;
+    }
+
+    .navigation {
+        ul {
+            display: flex;
+            justify-self: flex-end;
+            /*控制孩子li*/
+        }
+
+        .icon {
+            a {
+                width: 35px;
+                height: 35px;
+                margin: 0 5px;
+                transition: 0.35s;
+                // 欲控制的屬性，需父子(為類別)都有才有效
+                // 滑入滑出都要有效果:
+                //     1.需寫在父元素身上 
+                //     2.滑鼠停留的時間需等於持續時間 
+                // 只有滑入效果: 1.寫在:hover上的話 
+                //              2.滑鼠停留的時間少於持續時間
+            }
+        }
+
+        .menu {
+            @include glassmorphism;
+
+            a.active {
+                /* <a> 同時有.active不要空格，有空格是下一層*/
+                color: var(--color-black)
+            }
+
+            a {
+                /*行內元素不支援寬高*/
+                margin: $space-s;
+                /*行內元素，抓不到上下margin*/
+                padding: $space-y-s;
+                /*行內元素，padding完全支援*/
+                border-bottom: $border-m $alpha;
+                transition: $speed-fast;
+
+                /*延遲*/
+                &hover {
+                    border-bottom: $border-m $color-deep;
+                }
+            }
+        }
+
+    }
+}
+
+/* 共用標題*/
+.title {
+    h2 {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -8;
+            top: 10;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: $radius-ex;
+            background-color: $color-lesser4;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            bottom: 5px;
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: $radius-ex;
+            background-color: $color-lesser4;
+        }
+
+
+        font-family: $font-en;
+        font-size: map-get($font-size, xxxxl);
+        /*權重 !important>id>class>element*/
+        line-height: 1.5 !important;
+        border-bottom: $border-l $color-black;
+    }
+
+    h3 {
+        font-family: $font-title;
+        font-size: map-get($font-size, m);
+        text-align: center;
+        /*文字水平置中*/
+    }
+}
+
+main.index {
+    section {
+        @extend %flex-center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+}
+
+#banner {
+    background-color: $color-lesser1;
+}
+
+#news {
+    background-color: $color-bg1;
+}
+
+#service {
+    background-color: $color-bg2;
+}
+
+#video {
+    background-color: $color-bg3;
+}
+
+#contact {
+
+    #contact-form {
+        width: 30%;
+        font-size: map-get($font-size, xs);
+
+        * {
+            display: block;
+            width: 100%;
+        }
+
+        label {
+            font-size: map-get($font-size, xs);
+            padding-top: $space-m;
+
+        }
+
+        input,
+        textarea {
+            @extend %input-style;
+        }
+        small{
+            font-size: map-get($font-size, xs);
+        }
+
+        button {
+            @extend %btn-form;
+        }
+    }
+}

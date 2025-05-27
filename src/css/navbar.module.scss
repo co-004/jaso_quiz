@@ -1,0 +1,134 @@
+@use "sass:map";
+@use "../../scss/variable/var-color" as *;
+@use "../../scss/variable/var-font" as *;
+@use "../../scss/function/reset";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+.navHidden {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 1280px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 80px;
+  padding-right: 75px;
+  border-radius: 50px;
+  border: 1px solid rgba(200, 200, 200, 0.4);
+  background: rgba(226, 226, 226, 0.25);
+  box-shadow:
+    2px 2px 2px 0px rgba(255, 255, 255, 0.25) inset,
+    1px 5px 5.5px 0px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(7.5px);
+  z-index: 1000;
+}
+
+.logo {
+  width: 116.5px;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navCenter ul {
+  display: flex;
+  gap: 75px;
+  font-weight: $font-w-5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+
+  li a {
+    text-decoration: none;
+    color: $color-black;
+
+    &:hover {
+      color: $color-primary; 
+    }
+  }
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  padding-left: 8rem;
+  gap: 20px;
+}
+
+.member {
+  padding: 0 15px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-weight: $font-w-5;
+
+  font-size: 16px;
+
+  cursor: pointer;
+    &:hover {
+      color: $color-primary; 
+    }
+}
+
+.beanShape {
+  margin: 8px 0;
+  width: 100px;
+  height: 70px;
+  background-color: $color-primary-light1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-mask-image: url('../../public/assets/0.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  mask-image: url('../../public/assets/0.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  cursor: pointer;
+    transform-origin: center ; // 鐘擺旋轉軸心
+
+        &:hover {
+    animation: pendulum 1s ease-in-out infinite;
+    }
+}
+
+.goToShop {
+  color: $color-white;
+  font-size: 20px;
+  font-weight: $font-w-5;
+
+
+}
+
+.shopList {
+      &:hover {
+  animation: pendulum 1s ease-in-out infinite;
+    }
+}
+
+@keyframes pendulum {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(10deg); }
+}

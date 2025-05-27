@@ -1,0 +1,106 @@
+.points-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.points-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.points-icon {
+    background-color: #3DCE94;
+    color: white;
+    font-weight: 500;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.points-title {
+    font-size: 24px;
+    color: #3DCE94;
+    margin: 0;
+    font-weight: 500;
+}
+
+.points-summary {
+    background: linear-gradient(90deg, #3DCE94, #f5fefb);
+    border-radius: 20px;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.points-info {
+    color: white;
+}
+
+.points-label {
+    font-size: 18px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.points-total {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.points-total span {
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+// .points-exchange-btn {
+//     background: white;
+//     color: #3DCE94;
+//     padding: 14px 32px;
+//     border-radius: 999px;
+//     font-size: 18px;
+//     font-weight: 500;
+//     border: none;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     cursor: pointer;
+// }
+
+.points-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.points-table th,
+.points-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.points-table thead {
+    font-weight: bold;
+    color: #444;
+}
+
+.points-table .negative {
+    color: red;
+}
+
+.points-note {
+    text-align: right;
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}

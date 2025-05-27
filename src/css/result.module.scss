@@ -1,0 +1,327 @@
+@use "sass:map";
+@use "../../scss/variable/var-color" as *;
+@use "../../scss/variable/var-font" as *;
+@use "../../scss/function/reset";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+/* Result.module.scss */
+
+.result {
+  max-width: 1440px;
+  width: 100%;
+  margin: 130px auto;
+  padding: 0 20px;
+
+  font-family: $font-all;
+  color: #333;
+
+  // result.module.scss
+  .title {
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132%;
+    /* 31.68px */
+    letter-spacing: 2.16px;
+  }
+
+  .subtitle {
+    color: #3DCE94;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132%;
+    /* 31.68px */
+    letter-spacing: 2.16px;
+  }
+
+  .header {
+    text-align: left;
+    padding-left: 130px;
+
+  }
+
+  .radarSection {
+
+    padding: 5rem;
+    display: flex;
+    justify-content: space-between; // ← 讓左右分離
+    align-items: center;
+
+    .radarChart {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      color: $color-black;
+
+      .chartTitle {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+
+        .circle {
+          width: 22px;
+          height: 22px; //正圓形，所以寬與高都設一樣
+          border-radius: 99px;
+          background-color: $color-primary;
+          margin-right: 11px;
+
+        }
+      }
+
+      .chartNote {
+        margin-top: 0.5rem;
+        font-size: 10px;
+        text-align: left;
+
+      }
+
+    }
+
+    .radarCharacter {
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 32px 16px; // 行間距列間距，可依照需要調整
+      justify-items: center;
+      align-items: start;
+
+      .characterBox {
+
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-items: center;
+        column-gap: 8px;
+
+        .characterImgWrapper {
+          position: relative;
+          display: inline-block;
+          gap: 8px;
+          width: 145px;
+          height: 145px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          .bubble {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 50%;
+            font-size: 10px;
+            text-align: center;
+            line-height: 1.2;
+          }
+
+          .high {
+            background-color: #4caf50;
+          }
+
+          .medium {
+            background-color: #ff9800;
+          }
+
+          .low {
+            background-color: #f44336;
+          }
+        }
+
+        .bubbleText span {
+          display: inline-block;
+          font-size: 10px;
+          color: white;
+          text-align: center;
+          max-width: 2em;
+          word-break: break-word;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
+  .summary {
+    padding: 5rem;
+
+    h3 {
+      color: $color-black;
+      font-family: $font-all;
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 100%;
+      /* 36px */
+      letter-spacing: 3.24px;
+      padding-bottom: 26px;
+    }
+
+    .barGroup {
+      width: 830px;
+      margin-bottom: 1rem;
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+        color: var(--Neutrue-White, #FFF);
+font-family: "Noto Sans TC";
+font-size: 18px;
+font-weight: 500;
+letter-spacing: 1.62px;
+      }
+
+      .bar {
+
+        height: 30px;
+        background: #F4EFEF;
+        border-radius: 20px;
+        margin-bottom: 12px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .fill {
+        height: 100%;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 30px;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(90deg, #3DCE94, #55DDCC); // 可根據需求調整
+      }
+    }
+
+    .protein {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #3cb371;
+    }
+  }
+
+  .nutritionSplit {
+    margin: 2rem 0;
+
+    h3 {
+      font-size: 1.25rem;
+      color: #2c8f5b;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .productList {
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      img {
+        width: 100px;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        color: #2c8f5b;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .actions {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    .retry,
+    .share {
+      width: 205px;
+      font-family: $font-all;
+      font-size: 18px;
+
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      border-radius: 25px;
+      background-color: #3DCE94;
+      box-shadow: 0px 2px 3.5px 0px rgba(0, 0, 0, 0.25);
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+
+    .retry {
+      background-color: $color-gray;
+      color: $color-white;
+
+
+      &:hover {
+        background-color: $color-level2;
+        color: $color-white;
+
+
+      }
+    }
+  }
+}
+
+
+// .product-list {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   gap: 60px;
+//   padding: 80px 40px;
+//   font-family: "Noto Sans TC", sans-serif;
+// }
+
+// .product-card {
+//   width: 300px;
+//   text-align: left;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .product-card .product-image-wrapper {
+//   position: relative;
+//   width: 100%;
+//   border-radius: 20px;
+//   overflow: hidden;
+// }

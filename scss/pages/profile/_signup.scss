@@ -1,0 +1,145 @@
+.signup-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    font-family: "Noto Sans TC", sans-serif;
+
+    .signup-title-wrapper {
+        position: relative;
+        text-align: center;
+        margin-bottom: 20px;
+
+        h1 {
+            font-size: 64px;
+            font-weight: 900;
+            color: #3DCE94;
+            text-align: center;
+        }
+
+
+        .icon-left,
+        .icon-right {
+            position: absolute;
+            animation: float 1.5s ease-in-out infinite alternate; // 這裡的 1.5s 控制上下飄動的速度
+
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-15px); // 向上漂浮 15px
+            }
+        }
+
+        .icon-left {
+            left: -60px;
+            width: 110px;
+            height: 95px;
+            flex-shrink: 0;
+            top: 25%;
+            left: -37%;
+            transform: translateY(-60%);
+            animation-delay: 0s;
+        }
+
+        .icon-right {
+            right: -60px;
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            top: 15%;
+            transform: translateY(-60%);
+            animation-delay: 2s;
+
+        }
+    }
+
+
+    .signup-subtitle {
+        font-size: 16px;
+        color: #AAA6A8;
+        margin-bottom: 48px;
+    }
+
+    .signup-form {
+        max-width: 1440px;
+        margin: 0 auto;
+        font-size: 18px;
+        ;
+        width: 637px;
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 100px 1fr; // 左邊固定寬度，右邊撐開
+            align-items: center;
+            margin-bottom: 20px;
+
+            .input-label {
+                font-size: 18px;
+                font-weight: 500;
+                text-align: left; // ✅ 左對齊
+            }
+
+            .rounded-input {
+                padding: 12px 20px;
+                border-radius: 999px;
+                background: #F6EFEF;
+                border: none;
+                font-size: 16px;
+                color: #AAA6A8;
+                width: 100%;
+            }
+
+            .rounded-input::placeholder {
+                color: #AAA6A8;
+                opacity: 1;
+            }
+        }
+    }
+
+    .signup-login-tip {
+        margin-top: 22px;
+        font-size: 16px;
+        color: #AAA6A8;
+        text-align: center;
+
+        .login-link {
+            color: #3DCE94;
+            text-decoration: none;
+            margin-left: 4px;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+    .signup-button {
+        margin-top: 22px;
+        align-self: center;
+        background-color: #3DCE94;
+        color: white;
+        padding: 12px 60px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 999px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: white;
+            color: #3DCE94;
+            border: 2px solid #3DCE94;
+        }
+    }
+
+}

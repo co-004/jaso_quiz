@@ -1,0 +1,144 @@
+
+.nav-hidden {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1414px;
+        height: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 80px;
+        padding-right: 75px;
+        border-radius: 50px;
+        border: 1px solid rgba(200, 200, 200, 0.40);
+        background: rgba(226, 226, 226, 0.25);
+        box-shadow: 2px 2px 2px 0px rgba(255, 255, 255, 0.25) inset, 1px 5px 5.5px 0px rgba(0, 0, 0, 0.02);
+        backdrop-filter: blur(7.5px);
+        z-index: 3000;
+    }
+
+    .nav-hidden .logo {
+        width: 116.5px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: auto;
+        padding-left: 257px;
+    }
+
+    .member {
+        padding: 0px 15px;
+        border: 1px solid;
+        border-radius: 999px;
+        font-weight: bold;
+        font-size: 16px;
+
+    }
+
+    .bean-shape {
+        margin: 8px 0;
+        align-items: center;
+        background-color: #6dd6a7;
+        width: 140px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        -webkit-mask-image: url(../../assets/img/0.svg);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+
+        mask-image: url(../../assets/img/0.svg);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+    }
+
+    .go-to-shop {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+
+    .main-navbar {
+        height: 121px;
+        width: 100%;
+        background-color: white;
+        z-index: 9999;
+        // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        top: 0px;
+
+        .navbar-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .navbar-left,
+        .navbar-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            height: 40px;
+        }
+
+        .navbar-right {
+            justify-content: flex-end;
+
+            .member {
+                margin-right: 16px;
+            }
+
+            .bean-shape {
+                background-color: #3DCE94;
+                color: #fff;
+                padding: 8px 20px;
+                border-radius: 999px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    //通用的navbar
+    .navbar-links {
+        display: flex;
+        gap: 75px;
+
+        .nav-link {
+            font-size: 16px;
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+                color: #3DCE94;
+            }
+        }
+    }
+
+    .nav-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }

@@ -1,0 +1,100 @@
+@use "../variable/" as *;
+
+/* reset CSS */
+* {
+    box-sizing: border-box;
+    /*不要家邊框及內鉅*/
+}
+/* reset CSS */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* 重置字體 */
+body {
+    font-family: $font-all, sans-serif;
+  background: $color-white;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+//   font-weight: normal;
+  font-family: $font-all;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+    // display: block;
+  text-decoration: none;
+}
+input,select,option {
+  outline: none;
+}
+// .container{
+//     width: 347px;
+//     padding: 15% 60px;
+// }
+// .dialog_box{
+//     width: 347px;
+//     height: 190px;
+//     border-radius: 25px;
+//     background-color: #3DCE94;
+//     position: relative;
+
+    
+// }
+// .dialog_box::after{
+//     content: '';
+//     position: absolute;
+//     border-top: 30px solid #3DCE94;
+//     border-right: 0px solid transparent;
+//     border-left: 30px solid transparent;
+//     border-bottom: 0px solid #3DCE94;
+//     bottom: -30px;
+//     left: 180px;
+// }
+// .dialog_box p{
+//     color: #FFF;
+//     font-family: "Noto Sans TC";
+//     font-size: 24px;
+//     letter-spacing: 2.16px;
+//     padding: 40px 40px;
+    
+// }
+// .card{
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     left: 50px;
+// }
+// .card h2{
+//     padding: 20px;
+//     font-size: 16px;
+//     font-weight: 200;
+//     line-height: 1.5;
+// }
+// .card span{
+//     display: block;
+//     font-size: 14px;
+// }
+// .card img{
+//     width: 100px;
+//     aspect-ratio: 1/1;
+//     vertical-align: middle;
+// }
+
+

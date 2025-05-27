@@ -1,0 +1,29 @@
+//主色 
+$color-primary: #3DCE94;
+$color-primary-light1: #6dd6a7;
+$color-primary-light2: #8FE3C1;
+// 輔色
+$color-white: #ffffff;
+$color-lightgray1: #D9D9D9;
+$color-lightgray2: #D4D4D4;
+
+$color-gray: #AAA6A8;
+$color-dark: #2A2324; // !default 預設值改444
+
+// 等級色
+$color-level1: #B28247;
+$color-level2: #909090;
+$color-level3: #BBA435;
+
+
+$color-dark-gray: #2A2324;
+$color-light-black: #424242;
+$color-black: #000;
+
+// alpha透明度
+$alpha: transparent;
+$alpha-w20: rgba(255, 255, 255, 0.2);
+$alpha-w30: rgba(255, 255, 255, 0.3);
+$alpha-w40: rgba(255, 255, 255, 0.4);
+$alpha-w50: rgba(255, 255, 255, 0.5);
+$alpha-b15: rgba(0, 0, 0, .15);

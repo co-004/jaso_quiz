@@ -1,0 +1,35 @@
+.order-more {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  color: #3DCE94;
+  text-decoration: none;
+  position: relative;
+  margin-right: 10px;
+
+  .text,
+  .arrow {
+    display: inline-block;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .text {
+    order: 1;
+    transform: translateX(-8px);
+  }
+
+  .arrow {
+    order: 2;
+    transform: translateX(8px);
+  }
+
+  &:hover .text {
+    order: 2;
+    transform: translateX(8px);
+  }
+
+  &:hover .arrow {
+    order: 1;
+    transform: translateX(-8px);
+  }
+}

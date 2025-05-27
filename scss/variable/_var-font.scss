@@ -1,0 +1,42 @@
+// font family
+$font-all: "Noto Sans TC", sans-serif;
+    
+// font-size
+$font-size: ( /*map-get($font-size,*/
+  5xs: 0.75rem,     // 12px
+  4xs: 0.87rem,     // 13.92px
+  3xs: 0.875rem,    // 14px
+  2xs: 1rem,        // 16px
+  xs: 1.1rem,       // 17.6px
+  sm: 1.125rem,     // 18px 
+  s: 1.25rem,       // 20px
+  m: 1.5rem,        // 24px
+  lg: 1.875rem,     // 30px 
+  l0: 2rem,         // 32px 
+  l1: 2.25rem,      // 36px 
+  l: 2.5rem,        // 40px
+  xl: 3rem,         // 48px
+  2xl: 3.75rem,     // 60px
+  3xl: 4rem,        // 64px
+  4xl: 5rem,        // 80px
+  5xl: 6rem,        // 96px
+  6xl: 8rem         // 128px
+
+);
+
+//行高
+$line-h-s:1;
+$line-h-m:1.2;
+$line-h-l:1.5;
+
+//字重
+$font-w-9:900;
+$font-w-8:800;
+$font-w-7:700;
+$font-w-6:600;
+$font-w-5:500;
+$font-w-4:400;
+$font-w-3:300;
+$font-w-2:200;
+
+

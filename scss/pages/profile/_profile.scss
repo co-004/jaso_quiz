@@ -1,0 +1,344 @@
+.profile-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px;
+    max-width: 1560px; /* 確保不被 navbar 擋住 */
+    margin: 0 auto;
+    padding: 40px;
+    font-family: "Noto Sans TC", sans-serif;
+    background: #fff;
+    position: relative;
+}
+
+.icon-text {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.user-name-rank {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* 姓名與徽章之間的距離 */
+}
+
+.user-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+    flex: 10;
+}
+
+.user-rank-badge {
+    display: flex;
+    padding: 6px 20px;
+    border: 1px solid #000;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.user-bonus {
+    font-size: 14px;
+    color: #555;
+    margin: 4px 0;
+}
+
+.user-level {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.rank-rule-box {
+    background-color: #F4EFEF;
+    padding: 16px 20px;
+    border-radius: 10px;
+    min-height: 73px; // ✅ 建議用 min-height 而非固定 height
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
+
+    .rank-rule-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap; // ✅ 小螢幕時允許換行
+    }
+
+    .rank-link {
+        font-size: 14px;
+        color: #3DCE94;
+        text-decoration: none;
+        align-self: flex-start;
+        margin-top: 4px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.rank-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+.rank-inline-text {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 0; // ✅ 防止溢出
+
+    .rank-title {
+        font-size: 14px;
+        font-weight: 400;
+        color: #7E7E7E;
+        white-space: nowrap; // ✅ 保持在一行
+    }
+
+    .divider {
+        color: #ccc;
+    }
+
+    .rank-condition {
+        font-size: 14px;
+        font-family: "Noto Sans TC";
+        color: var(--Neutrue-Dark, #2A2324);
+        font-weight: 400;
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+}
+
+.rank-rule {
+    font-size: 12px;
+    color: #3DCE94;
+    margin: 4px 0 0;
+}
+
+
+.rank-notice {
+    height: 73px;
+    align-self: stretch;
+    background-color: #F4EFEF;
+}
+
+/* 消費進度條 */
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.gift-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.summary-title {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1.62px;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.progress-info-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.current-amount,
+.upgrade-info {
+    font-size: 12px;
+    color: #AAA6A8;
+    letter-spacing: 1.08px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #3DCE94;
+    width: 28%; // 動態控制進度
+}
+
+/* 表單欄位 */
+.profile-left-top,
+.profile-right-top,
+.profile-left-bottom,
+.profile-right-bottom {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.profile-left-bottom label {
+    margin-right: 12px;
+    font-size: 18px;
+    gap: 50px;
+}
+
+
+.gender-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 27px;
+    gap: 40px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 27px;
+    gap: 16px;
+
+    .input-label {
+        min-width: 100px; // 可依據實際需求調整寬度
+        font-family: "Noto Sans TC";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    .rounded-input {
+        border-radius: 50px;
+        background: #F4EFEF;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+input[type="checkbox"] {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    appearance: none;
+    background-color: #F4EFEF;
+
+    cursor: pointer;
+    position: relative; // ✅ 關鍵：提供定位基準
+    vertical-align: middle;
+    display: inline-block;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #3DCE94;
+
+}
+
+// input[type="checkbox"]:hover {
+//     border: solid #3DCE94;
+    
+// }
+
+.profile-right-bottom {
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.shipping-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 27px;
+
+}
+
+.shipping-title {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    min-width: 200px;
+    margin-top: 27px;
+}
+
+/* 按鈕包裹區域 */
+.edit-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1560px;
+    margin: 20px auto 80px;
+    /* 上方20px，底部 80px 撐開 footer 空間 */
+    padding-right: 40px;
+    /* 對齊右下欄內容 */
+}
+
+/* 保持原有樣式 */
+.edit-button {
+    background-color: #3DCE94;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 60px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #fff;
+        color: #3DCE94;
+        border: 2px solid #3DCE94;
+        box-shadow: 0 0 0 2px rgba(61, 206, 148, 0.2);
+    }
+}

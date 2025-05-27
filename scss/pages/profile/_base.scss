@@ -1,0 +1,23 @@
+body {
+  margin-bottom: 150px;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  min-width: 200px;
+}
+
+html {
+  overflow-y: scroll; // 保持垂直 scrollbar 穩定，避免 tab-bar layout 位移
+}

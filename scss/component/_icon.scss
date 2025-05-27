@@ -1,0 +1,74 @@
+@each $social in fb, ins, {
+    .icon-#{$social} {
+        background-image: url(../img/icons/j_community_#{$social}.svg);
+
+        &:hover {
+            background-image: url(../img/icons/j_community_#{$social}-hover.svg);
+        }
+    }
+}
+
+@each $arrow in arrowRight, arrowUp, {
+    .icon-#{$arrow} {
+        background-image: url(../img/icons/j_arrow_#{$arrow}.svg);
+
+        &:hover {
+            background-image: url(../img/icons/j_arrow_#{$arrow}-hover.svg);
+        }
+    }
+}
+
+@each $checkbox in checkbox_a, checkbox_b, {
+    .icon-#{$checkbox} {
+        background-image: url(../img/icons/j_icon_checkbox_#{$checkbox}.svg);
+
+        &:hover {
+            background-image: url(../img/icons/j_icon_checkbox_#{$checkbox}_on.svg);
+        }
+    }
+}
+
+@each $numeric in milti_a, minus_a, plus_a, milti_b, minus_b, plus_b, {
+    .icon-#{$numeric} {
+        background-image: url(../img/icons/j_numeric_#{$numeric}.svg);
+
+        &:hover {
+            background-image: url(../img/icons/j_numeric_#{$numeric}-hover.svg);
+        }
+    }
+}
+
+@each $babymona in b12, ca, d, fe, n, omg, {
+    .icon-#{$babymona} {
+        background-image: url(../img/icons/j_babymona_#{$babymona}.svg);
+    
+    }
+}
+
+@each $icon in collect, download, enlarge, filter, gift, half, learnmore, like, search, serves, setting, thumb, {
+    .icon-#{$icon} {
+        background-image: url(../img/icons/j_icon_#{$icon}.svg);
+    
+    }
+}
+
+@each $memberEdit in edit, normal, {
+    .icon-#{$memberEdit} {
+        background-image: url(../img/icons/j_member_#{$member}.svg);
+    
+    }
+}
+
+@each $shop in buy, card, del, drive, list, pack, {
+    .icon-#{$shop} {
+        background-image: url(../img/icons/j_shop_#{$shop}.svg);
+    
+    }
+}
+
+@each $member in copper3, silver2, gold1, {
+    .icon-#{$member} {
+        background-image: url(../img/icons/Property_member_#{$member}.svg);
+    
+    }
+}

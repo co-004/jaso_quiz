@@ -1,0 +1,225 @@
+.order-details {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Noto Sans TC", sans-serif;
+
+    .order-items {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 40px;
+
+        .order-header,
+        .order-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            padding: 16px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+
+            .cell-align {
+                margin-top: 28px;
+            }
+        }
+
+        .order-header {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: stretch; // ✅ 讓左右兩側同高
+            gap: 15px;
+
+            img {
+                width: 180px;
+                height: auto;
+                object-fit: cover;
+                flex-shrink: 0;
+                // ✅ 讓圖片高度 100% 撐滿 product-info 高度
+                height: 100%;
+                aspect-ratio: 1 / 1;
+                border-radius: 8px;
+            }
+
+            .order-id {
+                background: #aaa;
+                color: #fff;
+                padding: 2px 8px;
+                border-radius: 999px;
+                font-size: 10px;
+                display: inline-block;
+                margin-bottom: 6px;
+                margin-top: 10px;
+            }
+
+            .product-name {
+                font-weight: 500;
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .product-subtitle {
+                font-size: 14px;
+                color: #000;
+                margin-bottom: 4px;
+                font-weight: 400;
+            }
+
+            .product-tags .tag {
+                background-color: #e6fbf3;
+                color: #3DCE94;
+                font-size: 12px;
+                padding: 2px 8px;
+                border-radius: 999px;
+                display: inline-block;
+                margin-top: 4px;
+            }
+        }
+
+        .badges {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            .badge-green,
+            .badge-orange {
+                font-size: 12px;
+                padding: 2px 6px;
+                border-radius: 999px;
+                border: 1px solid;
+                display: inline-block;
+                width: fit-content;
+            }
+
+            .badge-green {
+                color: #3DCE94;
+                border-color: #3DCE94;
+            }
+
+            .badge-orange {
+                color: #FFA726;
+                border-color: #FFA726;
+            }
+        }
+
+        .origin-price {
+            font-size: 12px;
+            color: #aaa;
+            text-decoration: line-through;
+            margin-top: 4px;
+        }
+
+        .totals {
+            max-width: 600px;
+            margin-left: auto;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 24px 20px; // 上下左右都加一些呼吸感
+
+            .totals-row {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 14px;
+
+                .label {
+                    color: #333;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+
+                .value {
+                    font-weight: 500;
+                    color: #000;
+                    font-size: 16px;
+                    margin-right: 21px;
+                }
+            }
+
+            .total-amount .value {
+                color: #000;
+
+            }
+
+            .points-earned .value {
+                color: #3DCE94;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                .points-icon {
+                    background-color: #3DCE94;
+                    color: #fff;
+                    font-weight: 500;
+                    font-size: 14px;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+
+        .info-box {
+            background: rgba(212, 212, 212, 0.46);
+            padding: 24px;
+            border-radius: 10px;
+
+            h3 {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 12px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            p {
+                margin: 4px 0;
+                font-size: 14px;
+                color: #333;
+            }
+        }
+
+        .info-box1 {
+            padding: 24px;
+            border-radius: 10px;
+
+            h3 {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 12px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            p {
+                margin: 4px 0;
+                font-size: 14px;
+                color: #333;
+            }
+        }
+    }
+}

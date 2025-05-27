@@ -1,0 +1,50 @@
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  border-radius: 999px;
+  background-color: #F5F0EF;
+  /* 淺灰底 */
+  width: fit-content;
+  max-width: 1440px;
+  margin: 60px auto;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: -30px;
+  margin-bottom: 99px;
+
+
+}
+
+.tab-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #666;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-right: 1px solid #ddd;
+  width: 175px;
+  height: 50px;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover {
+    background-color: #d8f7ea;
+  }
+
+  &.active {
+    background-color: #3DCE94;
+    color: white;
+    min-width: fit-content;
+  }
+
+}

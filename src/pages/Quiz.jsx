@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styles from "../css/Quiz.module.scss";
 import { useNavigate } from "react-router-dom";
 import QuizAni from '../components/QuizAni';

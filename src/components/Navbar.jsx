@@ -6,21 +6,21 @@ const Navbar = () => {
   return (
     <header>
       <div className={styles.navHidden}>
-        <a className={styles.logo} href="/">
+        <a className={styles.logo} href="/jaso_quiz/">
         <img src={`${import.meta.env.BASE_URL}assets/nav-logo.svg`} alt="logo"/>
           {/* <img src={navLogo} alt="logo" /> */}
         </a>
         <div className={styles.navbar}>
           <div className={styles.navCenter}>
             <ul>
-              <li><a href="/">食物庫</a></li>
-              <li><a href="/">素食知識</a></li>
-              <li><a href="/">營養素算</a></li>
+              <li><a href="/jaso_quiz/">食物庫</a></li>
+              <li><a href="/jaso_quiz/">素食知識</a></li>
+              <li><a href="/jaso_quiz/">營養素算</a></li>
             </ul>
           </div>
           <div className={styles.navRight}>
             <div className={styles.member}>會員</div>
-            <a className={styles.shopList} href="/shop-list.html">
+            <a className={styles.shopList} href="/jaso_quiz/">
               <img src="/assets/shop-list.svg" alt="" />
             </a>
 

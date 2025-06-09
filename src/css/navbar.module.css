@@ -51,7 +51,7 @@ input, select, option {
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 1280px;
+  width: 1410px;
   height: 84px;
   display: flex;
   align-items: center;
@@ -124,11 +124,11 @@ input, select, option {
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-mask-image: url("../../public/assets/0.svg");
+  -webkit-mask-image: url("/assets/0.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
-  mask-image: url("../../public/assets/0.svg");
+  mask-image: url("/assets/0.svg");
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;

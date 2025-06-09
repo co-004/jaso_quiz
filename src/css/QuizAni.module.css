@@ -47,7 +47,7 @@ input, select, option {
 
 .imageContainer {
   position: absolute;
-  right: 5%;
+  right: 15rem;
   top: 45%;
   transform: translateY(-50%);
   width: 500px;
@@ -64,8 +64,8 @@ input, select, option {
 }
 
 .scale_q1 {
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 70%;
+  max-height: 70%;
 }
 
 .scale_q2 {

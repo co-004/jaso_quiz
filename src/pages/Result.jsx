@@ -136,7 +136,7 @@ const Result = () => {
 
 
   const handleRetry = () => {
-    navigate("/quiz"); // 返回測驗頁面
+    navigate("/"); // 返回測驗頁面
   };
 
   const handleShare = () => {
